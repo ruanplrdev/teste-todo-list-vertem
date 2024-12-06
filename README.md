@@ -75,15 +75,8 @@ Segue a seção atualizada com as escolhas técnicas incluindo **React Navigatio
      npx react-native run-ios  
      ```  
 
-## 📷 Capturas de Tela  
-*Adicione aqui imagens do app funcionando, se possível.*  
-
 ## 🤝 Contribuição  
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e enviar pull requests.  
 
 ## 📄 Licença  
 Este projeto está licenciado sob a licença MIT. Consulte o arquivo [LICENSE](./LICENSE) para mais informações.  
-
----
-
-**Adicione o link correto do repositório no GitHub.**  
