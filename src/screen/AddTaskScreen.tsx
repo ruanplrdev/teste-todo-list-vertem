@@ -3,7 +3,7 @@ import { View, Text, TextInput, StyleSheet } from 'react-native';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import Button from '../components/Button';
-import { spacing, colors } from '../theme';
+import { spacing, colors, typography } from '../theme';
 import { TodoContext } from '../src/context/TodoContext';
 
 const AddTaskScreen = ({ navigation }:any) => {
@@ -66,19 +66,18 @@ const styles = StyleSheet.create({
     backgroundColor: colors.background,
   },
   label: {
-    fontSize: 16,
-    fontWeight: 'bold',
+   ...typography.bodybold,
     marginBottom: spacing.sm,
     color: colors.text,
   },
   input: {
     borderWidth: 1,
     borderColor: colors.border,
-    borderRadius: 8,
+    borderRadius: spacing.sm,
     padding: spacing.md,
-    fontSize: 16,
     marginBottom: spacing.md,
     color: colors.text,
+    ...typography.body,
   },
   textArea: {
     height: 100,
@@ -86,8 +85,8 @@ const styles = StyleSheet.create({
   },
   error: {
     color: colors.error,
-    fontSize: 14,
     marginBottom: spacing.md,
+    ...typography.bodysm
   },
 });
 

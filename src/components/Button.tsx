@@ -1,6 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet, TextStyle, ViewStyle } from 'react-native';
-import {colors, spacing} from '../theme';
+import {colors, spacing, typography} from '../theme';
 
 interface Button {
     title: string,
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     },
     text: {
         color: colors.textLight,
-        fontSize: 16,
+        ...typography.body,
     },
 });
 

@@ -1,31 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { colors, spacing } from '../theme';
-import { Checkbox, CheckboxProps } from 'react-native-paper';
+import { colors, spacing, typography } from '../theme';
 
 export interface TodoItemProps {
   title: string;
   description: string;
   onDelete?: () => void;
   onComplete?: () => void;
-  completed:boolean;
+  completed: boolean;
 }
 
-const TodoItem = ({ title, description, onDelete, onComplete }: TodoItemProps) => {
-  const [isChecked, setIsChecked] = useState<CheckboxProps['status']>('unchecked');
-
-  const handleCheck = () => {
-    setIsChecked('checked');
-    if(onComplete){
-      onComplete();
-    }
-  };
-
+const TodoItem = ({ title, description, onDelete, onComplete, completed }: TodoItemProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.actions}>
         <TouchableOpacity onPress={onComplete}>
-          <View  style={styles.check}/>
+          <View style={styles.check}>
+            {completed && <View style={styles.checked} />}
+          </View>
         </TouchableOpacity>
       </View>
       <View style={styles.textContainer}>
@@ -55,12 +47,11 @@ const styles = StyleSheet.create({
     marginRight: spacing.md,
   },
   title: {
-    fontSize: 16,
-    fontWeight: 'bold',
     color: colors.text,
+    ...typography.body,
   },
   description: {
-    fontSize: 14,
+    fontSize: typography.bodysm.fontSize,
     color: colors.secondaryText,
   },
   actions: {
@@ -68,19 +59,25 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   delete: {
-    fontSize: 20,
     color: colors.error,
-    fontWeight: 'bold',
     marginLeft: spacing.sm,
+    fontSize: typography.title.fontSize,
   },
-  check:{
+  check: {
     width: 30,
     height: 30,
     borderRadius: 30,
     borderWidth: 1,
     borderColor: colors.secondaryText,
-    marginRight: 16,
-  }
+    marginRight: spacing.md,
+  },
+  checked: {
+    width: 14,
+    height: 14,
+    borderRadius: 30,
+    backgroundColor: colors.secondaryText,
+    margin: 7,
+  },
 });
 
 export default TodoItem;

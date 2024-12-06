@@ -6,20 +6,20 @@ import { TodoProvider } from './src/context/TodoContext';
 import TodoListScreen from './screen/TodoListScreen';
 import CompletedTodoListScreen from './screen/CompletedTodoListScreen';
 import AddTaskScreen from './screen/AddTaskScreen';
-import Icon from 'react-native-vector-icons/FontAwesome';
+
+type RootStackParamList = {
+  Home: undefined;
+  Adicionar: undefined;
+};
 
 const Tab = createBottomTabNavigator();
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const TabsNavigator = () => (
   <Tab.Navigator>
     <Tab.Screen
-      name="A Fazer"
+      name="Minhas Tarefas"
       component={TodoListScreen}
-      options={{
-        tabBarLabel: 'Home',
-        tabBarIcon: () =>  <Icon name="home" size={20} color={"#000"} />,
-      }}
     />
     <Tab.Screen name="Finalizadas" component={CompletedTodoListScreen} />
   </Tab.Navigator>
@@ -31,7 +31,7 @@ const App = () => {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Home" component={TabsNavigator} options={{ headerShown: false }} />
-          <Stack.Screen name="Adicionar Tarefa" component={AddTaskScreen} />
+          <Stack.Screen name="Adicionar" component={AddTaskScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </TodoProvider>

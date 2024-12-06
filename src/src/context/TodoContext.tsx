@@ -5,12 +5,14 @@ export interface TodoContextProps {
   tasks: TodoItemProps[];
   deleteTask: (index: number) => void;
   addTask: (item:TodoItemProps)=>void;
+  deleteAllTasks:  () => void,
   moveTaskToCompleted:(index: number)=>void;
 }
 export const TodoContext = createContext<TodoContextProps>({
   tasks: [],
   deleteTask: () => undefined,
   addTask: () => undefined,
+  deleteAllTasks:  () => undefined,
   moveTaskToCompleted: () => {},
 });
 
@@ -24,6 +26,10 @@ export const TodoProvider = ({children}: TodoProviderProps) => {
     if (title.trim()) {
       setTasks([...tasks, { title, description, completed: false }]);
     }
+  };
+
+  const deleteAllTasks = () => {
+    setTasks(prevTasks => prevTasks.filter(task => !task.completed)); // Remove todas as tarefas concluídas
   };
 
   const moveTaskToCompleted = (index:number) => {
@@ -41,6 +47,7 @@ export const TodoProvider = ({children}: TodoProviderProps) => {
     <TodoContext.Provider
       value={{
         tasks,
+        deleteAllTasks,
         addTask,
         moveTaskToCompleted,
         deleteTask,
