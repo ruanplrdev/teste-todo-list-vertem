@@ -4,10 +4,10 @@ import { useNavigation } from '@react-navigation/native';
 import TodoItem from '../components/TodoItem';
 import Button from '../components/Button';
 import { spacing, colors, typography } from '../theme';
-import { TodoContext, TodoContextType } from '../src/context/TodoContext';
+import { TodoContext, TodoContextProps } from '../src/context/TodoContext';
 
 const TodoListScreen = () => {
-  const { tasks, moveTaskToCompleted, deleteTask } = useContext<TodoContextType>(TodoContext);
+  const { tasks, moveTaskToCompleted, deleteTask } = useContext<TodoContextProps>(TodoContext);
   const navigation = useNavigation();
   const [searchText, setSearchText] = useState('');
 

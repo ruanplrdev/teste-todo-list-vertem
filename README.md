@@ -1,79 +1,89 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+Aqui está o README atualizado para um projeto React Native sem o uso do Expo:  
 
-# Getting Started
+---
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+# Todo App  
 
-## Step 1: Start the Metro Server
+Este é um aplicativo de gerenciamento de tarefas simples desenvolvido em **React Native**. Ele permite adicionar, excluir e marcar tarefas como concluídas, com foco em usabilidade e design limpo.  
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## 📂 Repositório  
+O código-fonte está disponível no GitHub no seguinte link:  
+[https://github.com/ruanplrdev/teste-todo-list-vertem.git](https://github.com/ruanplrdev/teste-todo-list-vertem.git)  
 
-To start Metro, run the following command from the _root_ of your React Native project:
+## 📋 Funcionalidades  
+- Adicionar novas tarefas.  
+- Excluir tarefas.  
+- Marcar tarefas como concluídas.  
+- Pesquisa por título das tarefas. 
+- Separa tarefas concluídas.
+- Excluir todas as tarefas concluídas.   
 
-```bash
-# using npm
-npm start
+Segue a seção atualizada com as escolhas técnicas incluindo **React Navigation (Stack e Tab Navigation)**:  
 
-# OR using Yarn
-yarn start
-```
+---
 
-## Step 2: Start your Application
+## 🛠️ Escolhas Técnicas  
+1. **React Native**: Escolhido pela sua eficiência no desenvolvimento de aplicativos móveis multiplataforma com código compartilhado para Android e iOS.  
+2. **Context API**: Utilizada para gerenciar o estado global do aplicativo, permitindo um código mais organizado e fácil de manter.  
+3. **Componentização**: Cada funcionalidade foi dividida em componentes reutilizáveis, como `TodoItem` e `Button`, para facilitar a manutenção e a escalabilidade.  
+4. **Formik**: Utilizado para lidar com formulários de maneira simplificada, fornecendo uma API robusta para controle de estado e validação dos inputs.  
+5. **Yup**: Implementado para validação de dados dos formulários, garantindo que os campos atendam aos requisitos antes de serem processados.  
+6. **React Navigation**:  
+   - **Stack Navigation**: Usado para gerenciar a navegação entre telas de forma hierárquica, permitindo transições naturais entre diferentes páginas.  
+   - **Tab Navigation**: Implementado para organizar as funcionalidades principais do app em uma barra de abas inferior, melhorando a usabilidade e o acesso às seções.  
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+## 🚀 Como Rodar o Projeto  
 
-### For Android
+### Pré-requisitos  
+- [Node.js](https://nodejs.org/) (versão LTS recomendada).  
+- [Android Studio](https://developer.android.com/studio) ou [Xcode](https://developer.apple.com/xcode/) configurados para rodar emuladores.  
+- React Native CLI instalado:  
+  ```bash  
+  npm install -g react-native-cli  
+  ```  
 
-```bash
-# using npm
-npm run android
+### Passos  
+1. Clone o repositório:  
+   ```bash  
+   git clone https://github.com/ruanplrdev/teste-todo-list-vertem.git
+   ```  
 
-# OR using Yarn
-yarn android
-```
+2. Navegue até o diretório do projeto:  
+   ```bash  
+   cd todo-app  
+   ```  
 
-### For iOS
+3. Instale as dependências:  
+   ```bash  
+   npm install  
+   # ou use yarn
+   yarn install  
+   ```  
 
-```bash
-# using npm
-npm run ios
+4. Inicie o Metro Bundler:  
+   ```bash  
+   npx react-native start  
+   ```  
 
-# OR using Yarn
-yarn ios
-```
+5. Execute o aplicativo:  
+   - Para Android:  
+     ```bash  
+     npx react-native run-android  
+     ```  
+   - Para iOS:  
+     ```bash  
+     npx react-native run-ios  
+     ```  
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+## 📷 Capturas de Tela  
+*Adicione aqui imagens do app funcionando, se possível.*  
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+## 🤝 Contribuição  
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e enviar pull requests.  
 
-## Step 3: Modifying your App
+## 📄 Licença  
+Este projeto está licenciado sob a licença MIT. Consulte o arquivo [LICENSE](./LICENSE) para mais informações.  
 
-Now that you have successfully run the app, let's modify it.
+---
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+**Adicione o link correto do repositório no GitHub.**  
