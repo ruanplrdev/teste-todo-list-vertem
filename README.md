@@ -50,7 +50,7 @@ Segue a seção atualizada com as escolhas técnicas incluindo **React Navigatio
 
 2. Navegue até o diretório do projeto:  
    ```bash  
-   cd todo-app  
+   cd teste-todo-list-vertem
    ```  
 
 3. Instale as dependências:  
