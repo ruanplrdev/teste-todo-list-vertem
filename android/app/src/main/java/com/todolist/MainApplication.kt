@@ -1,4 +1,4 @@
-package com.todo_list_vertem
+package com.todolist
 
 import android.app.Application
 import com.facebook.react.PackageList
